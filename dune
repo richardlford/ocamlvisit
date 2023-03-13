@@ -1,0 +1,15 @@
+(env 
+  (dev (flags (:standard -w -9..37 -g))))
+(library
+ (name ocamlvisit)
+ (public_name ocamlvisit)
+ (modes byte)
+ (modules ocamlvisit)
+ (preprocess
+  (pps lwt_ppx ppx_optcomp))
+ (libraries 
+   compiler-libs.bytecomp
+   compiler-libs.common
+   compiler-libs.optcomp
+   compiler-libs.toplevel)
+)
